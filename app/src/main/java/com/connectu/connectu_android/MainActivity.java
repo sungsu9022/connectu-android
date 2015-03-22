@@ -7,6 +7,8 @@ import android.view.MenuItem;
 
 
 public class MainActivity extends Activity {
+    private static final int _A = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
