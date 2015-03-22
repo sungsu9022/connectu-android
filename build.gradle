@@ -12,6 +12,10 @@ buildscript {
     }
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
 allprojects {
     repositories {
         jcenter()
