@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".FirstTabActivity"
+            android:label="@string/title_activity_first_tab" >
+        </activity>
+        <activity
+            android:name=".SecondTabActivity"
+            android:label="@string/title_activity_second_tab" >
+        </activity>
+        <activity
+            android:name=".ThirdTabActivity"
+            android:label="@string/title_activity_third_tab" >
+        </activity>
+        <activity
+            android:name=".FourthTabActivity"
+            android:label="@string/title_activity_fourth_tab" >
+        </activity>
     </application>
 
 </manifest>
