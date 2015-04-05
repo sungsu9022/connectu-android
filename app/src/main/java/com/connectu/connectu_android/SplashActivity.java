@@ -1,6 +1,7 @@
 package com.connectu.connectu_android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -19,9 +20,12 @@ public class SplashActivity extends Activity {
         hd.postDelayed(new Runnable() {
             @Override
             public void run() {
-                finish();       // 3 초후 이미지를 닫아버림
-            }
 
+                initialize();
+
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                finish();       // 2 minutes later
+            }
         }, 2000);
 
     }
@@ -47,4 +51,10 @@ public class SplashActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void initialize()
+    {
+
+    }
+
 }
