@@ -8,4 +8,5 @@
     <string name="title_activity_second_tab">Tab 2</string>
     <string name="title_activity_third_tab">Tab 3</string>
     <string name="title_activity_fourth_tab">Tab 4</string>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>

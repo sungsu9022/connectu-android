@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".FirstTabActivity"
             android:label="@string/title_activity_first_tab" >
@@ -31,6 +32,10 @@
         <activity
             android:name=".FourthTabActivity"
             android:label="@string/title_activity_fourth_tab" >
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/title_activity_splash" >
         </activity>
     </application>
 
