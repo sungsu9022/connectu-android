@@ -18,6 +18,7 @@ public class LoginActivity extends Activity {
     EditText user_id = null;
     EditText user_password = null;
     Button login_but;
+    Button join_but;
 
 
     @Override
@@ -38,6 +39,7 @@ public class LoginActivity extends Activity {
             user_password = (EditText) findViewById(R.id.edittext_password);
             login_but = (Button) findViewById(R.id.button_login);
 
+
             login_but.setOnClickListener(new OnClickListener() {
 
                 public void onClick(View v) {
@@ -54,10 +56,22 @@ public class LoginActivity extends Activity {
                     }
                 }
             });
+
+
+
         } else {
             //startActivity(new Intent(LoginActivity.this,MainActivity.class));
             //finish();
             setContentView(R.layout.activity_login);
+
+            join_but = (Button) findViewById(R.id.button_join);
+
+            join_but.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    setContentView(R.layout.activity_join);
+                }
+            });
         }
     }
 }
