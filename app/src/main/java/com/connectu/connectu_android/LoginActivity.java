@@ -4,74 +4,98 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginActivity extends Activity {
+import com.connectu.controller.SharedPreferenceController;
 
-    public static final String PREFS_NAME = "prefs";
-    SharedPreferences prefs;
-    EditText user_id = null;
-    EditText user_password = null;
+public class LoginActivity extends Activity {
+    EditText editText_id;
+    EditText editText_pw;
+    String string_id;
+    String string_pw;
+    Boolean boolean_yn;
     Button login_but;
     Button join_but;
+    CheckBox checkBox_autologin;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        editText_id = (EditText) findViewById(R.id.edittext_id);
+        editText_pw = (EditText) findViewById(R.id.edittext_password);
 
-        final String username = prefs.getString("username", null);
-        final String password = prefs.getString("password", null);
+        login_but = (Button) findViewById(R.id.button_login);
+        join_but = (Button) findViewById(R.id.button_join);
 
+        checkBox_autologin = (CheckBox) findViewById(R.id.checkbox_autologin);
 
-        if (username != null && password != null){
+        SharedPreferenceController pref = new SharedPreferenceController(LoginActivity.this);
+        checkBox_autologin.setChecked(pref.getValue(SharedPreferenceController.PREF_USER_AUTOLOGIN, false));
 
-            setContentView(R.layout.activity_login);
+        if(checkBox_autologin.isChecked())
+        {
+            string_id = pref.getValue(SharedPreferenceController.PREF_USER_ID, null);
+            string_pw = pref.getValue(SharedPreferenceController.PREF_USER_PASSWORD, null);
 
-            user_id = (EditText) findViewById(R.id.edittext_id);
-            user_password = (EditText) findViewById(R.id.edittext_password);
-            login_but = (Button) findViewById(R.id.button_login);
+            editText_id.setText(string_id);
+            editText_pw.setText(string_pw);
 
-
-            login_but.setOnClickListener(new OnClickListener() {
-
-                public void onClick(View v) {
-                    try {
-                        if(username.equalsIgnoreCase(user_id.getText().toString()) && password.equals(user_password.getText().toString())) {
-                            Toast.makeText(LoginActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                            finish();
-                        } else {
-                            Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-
-
-        } else {
-            //startActivity(new Intent(LoginActivity.this,MainActivity.class));
-            //finish();
-            setContentView(R.layout.activity_login);
-
-            join_but = (Button) findViewById(R.id.button_join);
-
-            join_but.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    setContentView(R.layout.activity_join);
-                }
-            });
+            if(editText_id.getText().toString().equals("id") && editText_pw.getText().toString().equals("pw"))
+            {
+                Toast.makeText(LoginActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                finish();
+            }
+            else
+            {
+                Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
+            }
         }
+
+        login_but.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View v) {
+                try {
+                    if (editText_id.getText().toString().equals("id") && editText_pw.getText().toString().equals("pw")) {
+                        Toast.makeText(LoginActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
+
+                        if (checkBox_autologin.isChecked())
+                        {
+                            SharedPreferenceController pref = new SharedPreferenceController(LoginActivity.this);
+                            pref.put(SharedPreferenceController.PREF_USER_ID, editText_id.getText().toString());
+                            pref.put(SharedPreferenceController.PREF_USER_PASSWORD, editText_pw.getText().toString());
+                            pref.put(SharedPreferenceController.PREF_USER_AUTOLOGIN, true);
+                        }
+                        else
+                        {
+                            SharedPreferenceController pref = new SharedPreferenceController(LoginActivity.this);
+                            pref.put(SharedPreferenceController.PREF_USER_AUTOLOGIN, false);
+                        }
+
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        join_but.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.activity_join);
+            }
+        });
     }
 }

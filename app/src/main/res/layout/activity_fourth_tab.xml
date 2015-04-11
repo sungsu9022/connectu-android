@@ -7,4 +7,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".FourthTabActivity" >
+    <CheckBox
+        android:id="@+id/checkbox_mainautologin"
+        android:text="자동 로그인"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
