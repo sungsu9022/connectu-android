@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:gravity="top"
-    tools:context="com.connectu.connectu_android.JoinActivity">
+    tools:context="com.connectu.activity.JoinActivity">
 
     <TextView android:text="@string/join" android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "com.connectu.connectu_android"
+        applicationId "com.connectu.activity"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 1

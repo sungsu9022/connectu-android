@@ -1,4 +1,4 @@
-package com.connectu.connectu_android;
+package com.connectu.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

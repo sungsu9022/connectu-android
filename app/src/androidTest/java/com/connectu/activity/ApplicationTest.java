@@ -1,4 +1,4 @@
-package com.connectu.connectu_android;
+package com.connectu.activity;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
