@@ -1,4 +1,4 @@
-package com.connectu.activity;
+package com.connectu.more.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,14 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+
+import com.connectu.activity.R;
 import com.connectu.controller.SharedPreferenceController;
 
 @SuppressLint("ValidFragment")
-public class FourthTabActivity extends Fragment {
+public class MoreActivity extends Fragment {
     Context mContext;
     CheckBox checkBox_autologin;
     Boolean boolean_yn;
-    public FourthTabActivity(Context context) {
+    public MoreActivity(Context context) {
         mContext = context;
     }
 

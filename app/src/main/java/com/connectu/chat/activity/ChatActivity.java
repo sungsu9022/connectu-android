@@ -1,4 +1,4 @@
-package com.connectu.activity;
+package com.connectu.chat.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.connectu.activity.R;
+
 @SuppressLint("ValidFragment")
-public class ThirdTabActivity extends Fragment {
+public class ChatActivity extends Fragment {
     Context mContext;
 
-    public ThirdTabActivity(Context context) {
+    public ChatActivity(Context context) {
         mContext = context;
     }
 

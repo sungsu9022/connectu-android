@@ -1,4 +1,4 @@
-package com.connectu.activity;
+package com.connectu.blinddate.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.connectu.activity.R;
+
 @SuppressLint("ValidFragment")
-public class FirstTabActivity extends Fragment {
+public class BlindDateActivity extends Fragment {
     Context mContext;
 
-    public FirstTabActivity(Context context) {
+    public BlindDateActivity(Context context) {
         mContext = context;
     }
 

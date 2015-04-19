@@ -15,6 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.connectu.blinddate.activity.BlindDateActivity;
+import com.connectu.chat.activity.ChatActivity;
+import com.connectu.meet.activity.MeetActivity;
+import com.connectu.more.activity.MoreActivity;
+
 public class MainActivity extends FragmentActivity implements
         ActionBar.TabListener {
 
@@ -111,13 +116,13 @@ public class MainActivity extends FragmentActivity implements
             // below) with the page number as its lone argument.
             switch (position) {
                 case 0:
-                    return new FirstTabActivity(mContext);
+                    return new BlindDateActivity(mContext);
                 case 1:
-                    return new SecondTabActivity(mContext);
+                    return new MeetActivity(mContext);
                 case 2:
-                    return new ThirdTabActivity(mContext);
+                    return new ChatActivity(mContext);
                 case 3:
-                    return new FourthTabActivity(mContext);
+                    return new MoreActivity(mContext);
             }
             return null;
         }

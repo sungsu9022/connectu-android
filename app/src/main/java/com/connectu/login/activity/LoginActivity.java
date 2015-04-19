@@ -1,4 +1,4 @@
-package com.connectu.activity;
+package com.connectu.login.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.connectu.activity.MainActivity;
+import com.connectu.activity.R;
 import com.connectu.controller.SharedPreferenceController;
 
 public class LoginActivity extends Activity {

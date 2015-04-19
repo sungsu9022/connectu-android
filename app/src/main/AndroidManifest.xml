@@ -12,23 +12,23 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.connectu.activity.FirstTabActivity"
+            android:name="com.connectu.blinddate.activity.BlindDateActivity"
             android:label="@string/title_activity_first_tab" >
         </activity>
         <activity
-            android:name="com.connectu.activity.SecondTabActivity"
+            android:name="com.connectu.meet.activity.MeetActivity"
             android:label="@string/title_activity_second_tab" >
         </activity>
         <activity
-            android:name="com.connectu.activity.ThirdTabActivity"
+            android:name="com.connectu.chat.activity.ChatActivity"
             android:label="@string/title_activity_third_tab" >
         </activity>
         <activity
-            android:name="com.connectu.activity.FourthTabActivity"
+            android:name="com.connectu.more.activity.MoreActivity"
             android:label="@string/title_activity_fourth_tab" >
         </activity>
         <activity
-            android:name="com.connectu.activity.SplashActivity"
+            android:name="com.connectu.splash.activity.SplashActivity"
             android:label="@string/title_activity_splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,11 +37,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.connectu.activity.LoginActivity"
+            android:name="com.connectu.login.activity.LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name="com.connectu.activity.JoinActivity"
+            android:name="com.connectu.join.activity.JoinActivity"
             android:label="@string/title_activity_join" >
         </activity>
     </application>

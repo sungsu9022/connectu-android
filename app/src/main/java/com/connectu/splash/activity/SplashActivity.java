@@ -1,23 +1,42 @@
-package com.connectu.activity;
+package com.connectu.splash.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.connectu.login.activity.LoginActivity;
+import com.connectu.activity.R;
 
-public class JoinActivity extends Activity {
+
+public class SplashActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_join);
+        setContentView(R.layout.activity_splash);
+
+        Handler hd = new Handler();
+
+        hd.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                initialize();
+
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                finish();       // 2 minutes later
+            }
+        }, 2000);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_join, menu);
+        getMenuInflater().inflate(R.menu.menu_splash, menu);
         return true;
     }
 
@@ -35,4 +54,10 @@ public class JoinActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void initialize()
+    {
+
+    }
+
 }
