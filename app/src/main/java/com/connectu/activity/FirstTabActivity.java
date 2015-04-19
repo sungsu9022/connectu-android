@@ -21,6 +21,8 @@ public class FirstTabActivity extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_first_tab, null);
 
+
+
         return view;
     }
 
