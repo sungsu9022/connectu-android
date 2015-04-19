@@ -13,19 +13,19 @@
         </activity>
         <activity
             android:name="com.connectu.blinddate.activity.BlindDateActivity"
-            android:label="@string/title_activity_first_tab" >
+            android:label="@string/title_activity_blind_date" >
         </activity>
         <activity
             android:name="com.connectu.meet.activity.MeetActivity"
-            android:label="@string/title_activity_second_tab" >
+            android:label="@string/title_activity_meet" >
         </activity>
         <activity
             android:name="com.connectu.chat.activity.ChatActivity"
-            android:label="@string/title_activity_third_tab" >
+            android:label="@string/title_activity_chat" >
         </activity>
         <activity
             android:name="com.connectu.more.activity.MoreActivity"
-            android:label="@string/title_activity_fourth_tab" >
+            android:label="@string/title_activity_more" >
         </activity>
         <activity
             android:name="com.connectu.splash.activity.SplashActivity"

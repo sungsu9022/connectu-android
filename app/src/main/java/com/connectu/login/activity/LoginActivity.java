@@ -13,15 +13,14 @@ import android.widget.Toast;
 import com.connectu.activity.MainActivity;
 import com.connectu.activity.R;
 import com.connectu.controller.SharedPreferenceController;
+import com.connectu.login.model.LoginModel;
 
 public class LoginActivity extends Activity {
+    LoginModel loginModel;
     EditText editText_id;
     EditText editText_pw;
-    String string_id;
-    String string_pw;
-    Boolean boolean_yn;
-    Button login_but;
-    Button join_but;
+    Button button_login;
+    Button button_join;
     CheckBox checkBox_autologin;
 
 
@@ -33,8 +32,8 @@ public class LoginActivity extends Activity {
         editText_id = (EditText) findViewById(R.id.edittext_id);
         editText_pw = (EditText) findViewById(R.id.edittext_password);
 
-        login_but = (Button) findViewById(R.id.button_login);
-        join_but = (Button) findViewById(R.id.button_join);
+        button_login = (Button) findViewById(R.id.button_login);
+        button_join = (Button) findViewById(R.id.button_join);
 
         checkBox_autologin = (CheckBox) findViewById(R.id.checkbox_autologin);
 
@@ -43,11 +42,11 @@ public class LoginActivity extends Activity {
 
         if(checkBox_autologin.isChecked())
         {
-            string_id = pref.getValue(SharedPreferenceController.PREF_USER_ID, null);
-            string_pw = pref.getValue(SharedPreferenceController.PREF_USER_PASSWORD, null);
+            loginModel.setIdentfication(pref.getValue(SharedPreferenceController.PREF_USER_ID, null));
+            loginModel.setPassword(pref.getValue(SharedPreferenceController.PREF_USER_PASSWORD, null));
 
-            editText_id.setText(string_id);
-            editText_pw.setText(string_pw);
+            editText_id.setText(loginModel.getIdentfication());
+            editText_pw.setText(loginModel.getPassword());
 
             if(editText_id.getText().toString().equals("id") && editText_pw.getText().toString().equals("pw"))
             {
@@ -61,7 +60,7 @@ public class LoginActivity extends Activity {
             }
         }
 
-        login_but.setOnClickListener(new OnClickListener() {
+        button_login.setOnClickListener(new OnClickListener() {
 
             public void onClick(View v) {
                 try {
@@ -92,7 +91,7 @@ public class LoginActivity extends Activity {
             }
         });
 
-        join_but.setOnClickListener(new OnClickListener() {
+        button_join.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 setContentView(R.layout.activity_join);

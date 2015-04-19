@@ -24,7 +24,7 @@ public class MoreActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_fourth_tab, null);
+        View view = inflater.inflate(R.layout.activity_more, null);
 
         checkBox_autologin = (CheckBox) view.findViewById(R.id.checkbox_mainautologin);
 

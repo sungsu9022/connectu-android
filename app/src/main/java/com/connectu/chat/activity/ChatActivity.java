@@ -21,7 +21,7 @@ public class ChatActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_third_tab, null);
+        View view = inflater.inflate(R.layout.activity_chat, null);
 
         return view;
     }
