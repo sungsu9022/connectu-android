@@ -21,7 +21,7 @@ public class BlindDateActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_first_tab, null);
+        View view = inflater.inflate(R.layout.activity_blind_date, null);
 
 
 

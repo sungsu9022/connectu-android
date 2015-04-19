@@ -138,13 +138,13 @@ public class MainActivity extends FragmentActivity implements
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.title_activity_first_tab).toUpperCase(l);
+                    return getString(R.string.title_activity_blind_date).toUpperCase(l);
                 case 1:
-                    return getString(R.string.title_activity_second_tab).toUpperCase(l);
+                    return getString(R.string.title_activity_meet).toUpperCase(l);
                 case 2:
-                    return getString(R.string.title_activity_third_tab).toUpperCase(l);
+                    return getString(R.string.title_activity_chat).toUpperCase(l);
                 case 3:
-                    return getString(R.string.title_activity_fourth_tab).toUpperCase(l);
+                    return getString(R.string.title_activity_more).toUpperCase(l);
             }
             return null;
         }
